@@ -69,6 +69,7 @@ class Register extends Component{
               <WhiteSpace/>
               <InputItem
                 placeholder="请确认用户密码"
+                type="password"
                 onChange = {val=>this.handleChange('rePassword',val)}
               >确认密码：</InputItem>
               <Item>

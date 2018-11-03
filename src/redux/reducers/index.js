@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 import {AUTH_SUCCESS,ERR_MSG}from '../action-type'
-// import {getRedirectPath}from '../../utils'
+import {getRedirectPath}from '../../utils'
 //定义初始化状态的值
 const initUserState = {
   username:'',
@@ -11,7 +11,7 @@ const initUserState = {
 function user(preState = initUserState,action) {
   switch (action.type) {
     case AUTH_SUCCESS :
-      return {username: action.data.username, type: action.data.type, msg: ''}
+      return {username: action.data.username, type: action.data.type, msg: '',redirectTo: getRedirectPath(action.data.type, action.data.header)}
     case ERR_MSG :
       return {...action.data}
     default:
